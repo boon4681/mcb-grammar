@@ -6,7 +6,7 @@ MCB is a statically typed language. This means that variables do have types in d
 - Integer
 - Float (upcoming) [on research]
 - Array (find function is upcoming) [on research]
-- Dict
+- Map
 
 ## Scoreboard
 
@@ -15,6 +15,7 @@ MCB is a statically typed language. This means that variables do have types in d
 ```ts
 // Format
 let objective:score<minecraft:criteria>
+//    ^--- variable_namve
 
 // Example
 let foo:score<dummy>
@@ -109,7 +110,7 @@ Example : `["a","b","c","d","e"]`, `[1,2,3,4,5]`
 
 **Basic Declaration:**
 
-- Default Namespace is `mcb.dummy`
+- Default Namespace is `mcb.gabages.arrays`
 - Default TargetPath will be `random`
 
 ```ts
@@ -169,9 +170,13 @@ execute store result storage hi list[0] int 1 run scoreboard players get 0 mcb.g
 **Built-in Functions:**
 
 A built-in functions that make your life a lot easier than before, provided
-`push`, `puff`, `pop`, `shift` and `find` function with within
+`push`, `puff`, `pop`, `shift` and `find` function with function binding within
 
 - **`push`** : Add one element to the end index of an array
+
+    ```ts
+    push(source:array, value:any) -> true | false
+    ``` 
 
     ```ts
     let foo:array = [1,2,3,4,5]
@@ -224,4 +229,42 @@ A built-in functions that make your life a lot easier than before, provided
 
     // find
     find(foo,test) // 1
+    ```
+
+## Map
+
+The represent of storage in term of map/dict whatever you call.
+
+**Basic Declaration:**
+
+- Default Namespace is `mcb.gabages.maps`
+- Default TargetPath is `random`
+
+```ts
+// Format
+let variable_name:map = value
+
+// Example
+let foo:map = {}
+```
+
+```ts
+// Format
+let variable_name:map<Namespace> as TargetPath = value
+
+// Example
+let foo:map<bar> me = {}
+```
+
+**Built-in Function:**
+
+- `del` : Delete (remove) data in dict
+
+    ```ts
+    let foo:map = {hello:"HI"}
+    // del
+    del(foo,"hello")
+
+    // function binding
+    foo --> del("hello")
     ```
