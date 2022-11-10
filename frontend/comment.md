@@ -38,9 +38,16 @@ comment
 
 If you want to leave a comment in compiled datapack you can do this.
 
-```ts
+```kt
 belong
 {
     // hello this comment belong to compiled datapack
+}
+
+belong{
+    // hello this function has a comment on the top of the file
+    fun hello(){
+        say hi
+    }
 }
 ```

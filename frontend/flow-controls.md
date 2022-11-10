@@ -12,4 +12,4 @@ The ability to run some code depending on if conditions is true
 
 ## if Expressions
 
-In MCB `if` is an expression allows you to run your branches of code on conditions, it returns a value.
+In MCB `if` is an expression allows you to run your branch of code on conditions, it returns a value.

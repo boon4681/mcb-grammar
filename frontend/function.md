@@ -2,6 +2,8 @@
 
 Functions in MCB declared with `fun` keyword, and Minecraft commands can only be used inside functions. Any codes that is used outside function will run with top piority by `minecraft:tags\functions\load.json`
 
+on compile time file name is folder and function_name is file_name
+
 **Basic Function:**
 
 ```kt
@@ -25,11 +27,12 @@ fun function_name(param_1:type,param_2:type,...) -> return_type{
 Examples:
 
 ```kt
+// src/hello.ts
 fun hi(){
     say hi
 }
 
-fun isOdd(num:int){
+fun is_odd(num:int){
     if(num % 2 == 1){ // read about if in flow controls
         say odd
     }
@@ -38,5 +41,25 @@ fun isOdd(num:int){
 
 hi() // call function
 
-isOdd(1) // function with parameter
+is_odd(1) // function with parameter
+```
+
+Compiled directory:
+
+```log
+build_folder
+├ data
+|  ├ minecraft
+|  |  └ tags
+|  |     └ functions
+|  |        └ load.json
+|  └ example
+|     └ functions
+|        ├ hello
+|        |   ├ ifs
+|        |   |  └ mcb.hello.is_odd.ifs.0.mcfunction
+|        |   ├ hi.mcfunction
+|        |   └ is_odd.mcfunction
+|        └ load.mcfunction
+└ pack.mcmeta
 ```

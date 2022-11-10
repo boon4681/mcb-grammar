@@ -176,7 +176,7 @@ A built-in functions that make your life a lot easier than before, provided
 
     ```ts
     push(source:array, value:any) -> true | false
-    ``` 
+    ```
 
     ```ts
     let foo:array = [1,2,3,4,5]
