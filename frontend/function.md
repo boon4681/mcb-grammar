@@ -84,10 +84,20 @@ Modifiers are prefixed keywords that modify function, attaching metadata to func
     }
     ```
 
-Also you can combined modifiers by place whitespace between.
+- Combined modifiers by place whitespace between.
+
+    ```kt
+    tick load fun hello(){
+        say hello
+    }
+    ```
 
 ```kt
-tick load fun hello(){
-    say hello
+#[builder]
+fun hello100(){
+    let n:int = 0
+    for(let i:int=0;i<n;i++){
+        -> f'say hi ${i}'
+    }
 }
 ```

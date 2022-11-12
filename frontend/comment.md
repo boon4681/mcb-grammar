@@ -47,6 +47,7 @@ belong
 belong{
     // hello this function has a comment on the top of the file
     fun hello(){
+        // this command will say hi
         say hi
     }
 }

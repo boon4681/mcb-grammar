@@ -102,6 +102,15 @@ scoreboard players set bar foo 0
 scoreboard players operations @p foo = bar foo
 ```
 
+## Boolean
+
+The concept of boolean in MCB is using scoreboard with score
+`0 represent false` and `1 represent true`
+
+**Why? scoreboard:**
+Why MCB using scoreboard instead of storage that can store boolean directly,
+beacuse when you want to make a comparison of two boolean, it took more computation than scoreboard.
+
 ## Array
 
 The represent of Array value in MCB is a sequence of variable in [], but in minecraft you can not access with the array directly so MCB have a Built-in function to do it for you.
