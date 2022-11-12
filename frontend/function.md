@@ -63,3 +63,31 @@ build_folder
 |        └ load.mcfunction
 └ pack.mcmeta
 ```
+
+**Function Modifiers:**
+
+Modifiers are prefixed keywords that modify function, attaching metadata to function that compiler can be used to compiled code by modifier property.
+
+- `load` make your function run after datapack was loaded, triggered by `minecraft:tags\functions\load.json`
+
+    ```kt
+    load fun hello(){
+        say hello
+    }
+    ```
+
+- `tick` make your function run every-tick by `minecraft:tags\functions\tick.json`
+
+    ```kt
+    tick fun hi(){
+        say hi
+    }
+    ```
+
+Also you can combined modifiers by place whitespace between.
+
+```kt
+tick load fun hello(){
+    say hello
+}
+```
