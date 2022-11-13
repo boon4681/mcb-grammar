@@ -4,6 +4,8 @@ Functions in MCB declared with `fun` keyword, and Minecraft commands can only be
 
 on compile time file name is folder and function_name is file_name
 
+## Normal Function
+
 **Basic Function:**
 
 ```kt
@@ -27,7 +29,7 @@ fun function_name(param_1:type,param_2:type,...) -> return_type{
 Examples:
 
 ```kt
-// src/hello.ts
+// src/hello.mcb
 fun hi(){
     say hi
 }
@@ -92,12 +94,51 @@ Modifiers are prefixed keywords that modify function, attaching metadata to func
     }
     ```
 
+## Advance Function
+
+**Builder function:**
+
+MCB compiler has marker to tell the compiler to run the function and using the result of function to replace it-self.
+
+By using `>` you can echo line of code to a file and its allow you to format string.
+
+Function with builder marker must called with constant value and some types of variable can not use inside builder function.
+
+Not Allowed types of variable:
+
+- score
+
 ```kt
-#[builder]
-fun hello100(){
-    let n:int = 0
-    for(let i:int=0;i<n;i++){
-        -> f'say hi ${i}'
-    }
+#[builder] // builder marker
+fun hello_hi_i(){
+    let i:int = 5
+    > say hello
+    > say hi
+    > f'say ${i}'
 }
+```
+
+**Echo to file path:**
+
+```kt
+// src/hello.mcb
+#[builder]
+fun hello_to_file(){
+    its_me > say hello
+}
+
+hello_to_file()
+```
+
+Compiled directory:
+
+```log
+build_folder
+├ data
+|  ├ minecraft
+|  └ example
+|     └ functions
+|        └ hello
+|           └ its_me.mcfunction
+└ pack.mcmeta
 ```

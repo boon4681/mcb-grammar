@@ -52,8 +52,10 @@ if(num % 2 == 1){
 ```kt
 fun is_odd(num:int){
     return if(num %2 == 1){
+        say 'is ood'
         -> true
     }else{
+        say 'is even'
         -> false
     }
 }
@@ -69,27 +71,34 @@ The `for` loop in MCB came up with many difference way to using it.
 
 Now MCB have two types of `for`
 
-**`for....in`** This type of `for` is looping anything in MCB that provides an iterator.
+### **`for....in`**
+
+This type of `for` is looping anything in MCB that provides an iterator.
 
 **Iterator in MCB:**
 
 - array
 - range
 
-**Basic of for....in :**
+**Syntax:**
 
 ```kt
 for(i in 1..10){
     // ...
 }
+```
 
-// like this
+**Basic of for....in :**
+
+```kt
 for(i in 1..10){
     say hi
 }
 ```
 
-**`for`** This type of `for` is looping until a condition expression is false.
+### **`for`**
+
+This type of `for` is looping until a condition expression is false.
 
 **Syntax:**
 
@@ -101,6 +110,39 @@ for(initial; condition; step){
 
 **Basic of for:**
 
+```ts
+let foo:score<dummy>
+for(int<foo> i=0; i<10; i++){
+    // ....
+}
+```
+
+## while and do....while loops
+
+`while` and `do....while` loops is looping their block until a condition expression is false and beware of endless loop if your condition is not going false that mean you will traped in an endless loop
+
+### while
+
 ```kt
-for(int<>)
+while(conditions){
+    // ...
+}
+
+while(i<10){
+    // ....
+    i++
+}
+```
+
+### do....while
+
+```kt
+do{
+    // ....
+}while(conditions)
+
+do{
+    // ....
+    i--
+}while(i>10)
 ```
