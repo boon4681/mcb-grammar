@@ -2,6 +2,15 @@
 
 MCB is a statically typed language. This means that variables do have types in declaration.
 
+## Types Concept
+
+MCB Types are based on "Wrapper"
+
+The Wrapper is a function that designed to return compiled code as a string when you attached parameters following this < ..param-1, param-2.. > structure.
+
+This is basic types that MCB are currently provinded.
+if you see any of upcomming that's mean they are comming soon.
+
 - Scoreboard
 - Integer
 - Float (upcoming) [on research]

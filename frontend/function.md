@@ -98,15 +98,16 @@ Modifiers are prefixed keywords that modify function, attaching metadata to func
 
 **Builder function:**
 
-MCB compiler has marker to tell the compiler to run the function and using the result of function to replace it-self.
+MCB compiler has builder marker to provided metadata to the compiler,
+calling the function and using the result of function to replace it-self.
 
-By using `>` you can echo line of code to a file and its allow you to format string.
+By using `>` symbol you can echo line of code to a file and allow you to do string format.
 
-Function with builder marker must called with constant value and some types of variable can not use inside builder function.
+Function with builder marker must called with constant value that some types of variable can not be used inside builder function.
 
 Not Allowed types of variable:
 
-- score
+- Scoreboard
 
 ```kt
 #[builder] // builder marker
