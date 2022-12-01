@@ -7,6 +7,8 @@ Leave a comment in your source code that the compiler will ignore but people rea
 Start the comment with two slashes, and the comment
 continues until the end of the line
 
+Warning you are not allow to comment after command in unsafe block.
+
 ```ts
 // this is a comment
 
@@ -36,9 +38,11 @@ comment
 
 ## Comment to datapack
 
-If you want to leave a comment in compiled datapack you can do this.
+If you want to leave a comment in compiled datapack you can use belong block to do multilines comment or b// to do one line comment.
 
 ```kt
+b// this comment belong to compiled datapack
+
 belong
 {
     // hello this comment belong to compiled datapack

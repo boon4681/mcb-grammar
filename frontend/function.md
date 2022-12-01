@@ -101,11 +101,16 @@ Modifiers are prefixed keywords that modify function, attaching metadata to func
 MCB compiler has builder marker to provided metadata to the compiler,
 calling the function and using the result of function to replace it-self.
 
-By using `>` symbol you can echo line of code to a file and allow you to do string format.
+By using `>` symbol you can echo line of code to a file and its allow you to do string format.
 
-Function with builder marker must called with constant value that some types of variable can not be used inside builder function.
+You can select writing mode by placing mode in front of `>`
 
-Not Allowed types of variable:
+Writing mode:
+
+- nothing presented as append to file.
+- `w` presented as write to file, old content in file will replaced by following string.
+
+[Wrapper](./wrapper.md) in builder function must be supported builder function
 
 - Scoreboard
 
