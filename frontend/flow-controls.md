@@ -8,6 +8,7 @@ The ability to run some code depending on if conditions is true
 
 - Conjunction: &&
 - Disconjunction: ||
+- Not: !
 
 **Types of condition:**
 

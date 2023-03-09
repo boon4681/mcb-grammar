@@ -66,14 +66,14 @@ build_folder
 └ pack.mcmeta
 ```
 
-**Function Modifiers:**
+**Function Decorators:**
 
-Modifiers are prefixed keywords that modify function, attaching metadata to function that compiler can be used to compiled code by modifier property.
+Decorators are prefixed keywords that modify function, attaching metadata to function that compiler can be used to compiled code by modifier property.
 
 - `load` make your function run after datapack was loaded, triggered by `minecraft:tags\functions\load.json`
 
     ```kt
-    load fun hello(){
+    @load fun hello(){
         say hello
     }
     ```
@@ -81,7 +81,7 @@ Modifiers are prefixed keywords that modify function, attaching metadata to func
 - `tick` make your function run every-tick by `minecraft:tags\functions\tick.json`
 
     ```kt
-    tick fun hi(){
+    @tick fun hi(){
         say hi
     }
     ```
@@ -89,7 +89,9 @@ Modifiers are prefixed keywords that modify function, attaching metadata to func
 - Combined modifiers by place whitespace between.
 
     ```kt
-    tick load fun hello(){
+    @tick
+    @load
+    fun hello(){
         say hello
     }
     ```
@@ -117,7 +119,7 @@ Writing mode:
 ```kt
 #[builder] // builder marker
 fun hello_hi_i(){
-    let i:int = 5
+    let i:Int32 = 5
     > say hello
     > say hi
     > f'say ${i}'

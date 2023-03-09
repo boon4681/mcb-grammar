@@ -38,6 +38,26 @@ Compiled code:
 scoreboard objective add foo dummy
 ```
 
+**Assign variable to Selector:**
+
+```ts
+// Format
+objective<Selector> = variable
+
+// Example
+let foo:score<dummy> // Declare scoreboard
+let bar:int<foo> = 0 // Declare integer value 0
+foo[@p] = bar
+```
+
+Compiled code:
+
+```mcfunction
+scoreboard objective add foo dummy
+scoreboard players set bar foo 0
+scoreboard players operation @p foo = bar foo
+```
+
 **Declared with DisplayName:**
 
 ```ts
@@ -91,26 +111,6 @@ Compiled code:
 scoreboard objective add foo dummy
 scoreboard players set @p foo 0
 scoreboard players set @p foo 20
-```
-
-**Assign variable to Selector:**
-
-```ts
-// Format
-objective<Selector> = variable
-
-// Example
-let foo:score<dummy> // Declare scoreboard
-let bar:int<foo> = 0 // Declare integer value 0
-foo<@p> = bar
-```
-
-Compiled code:
-
-```mcfunction
-scoreboard objective add foo dummy
-scoreboard players set bar foo 0
-scoreboard players operations @p foo = bar foo
 ```
 
 ## Boolean
@@ -217,7 +217,7 @@ A built-in functions that make your life a lot easier than before, provided
     puff(foo,0)// foo: [0,1,2,3,4,5]
 
     // function binding
-    bar --> puff(1) // bar: [0,1,2,3,4,5]
+    bar --> puff(1) // bar: [1,1,2,3,4,5]
     ```
 
 - **`pop`** : Remove the last element from an array
@@ -233,7 +233,7 @@ A built-in functions that make your life a lot easier than before, provided
     ```ts
     let foo:array = [1,2,3,4,5]
     // function binding
-    foo --> shift // foo: [1,2,3,4]
+    foo --> shift // foo: [2,3,4,5]
     ```
 
 - **`find`** : return the first element of an array that satisfies the testing function.
